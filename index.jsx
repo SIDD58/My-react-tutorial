@@ -3,12 +3,18 @@ import { Fragment } from 'react'
 
 const root=createRoot(document.getElementById('root'))
 root.render(
-    <>
-    <Header/>
-    <MainContent/>
-    <Footer/>
-    </>
+    <Page/>
 )
+function Page()
+{
+    return (
+        <>
+            <Header/>
+            <MainContent/>
+            <Footer/>      
+        </>
+    )
+}
 function Header()
 {
     return(
