@@ -1,9 +1,24 @@
 import {createRoot} from 'react-dom/client'
+import { Fragment } from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import MainContent from './components/MainContent'
 
 const root=createRoot(document.getElementById('root'))
-root.render(<h1>Hello</h1>)
-console.log("React Element Javascript object")
-console.log(<h1>Hello</h1>)
-const h1=document.createElement('h1')
-console.log("Actual browser DOM element")
-console.log(h1)
+root.render(
+    <Page/>
+)
+function Page()
+{
+    return (
+        <>
+            <Header/>
+            <MainContent/>
+            <Footer/>      
+        </>
+    )
+}
+
+
+
+
