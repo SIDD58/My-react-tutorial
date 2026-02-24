@@ -1,9 +1,20 @@
 import {createRoot} from 'react-dom/client'
 
 const root=createRoot(document.getElementById('root'))
-root.render(<h1>Hello</h1>)
-console.log("React Element Javascript object")
-console.log(<h1>Hello</h1>)
-const h1=document.createElement('h1')
-console.log("Actual browser DOM element")
-console.log(h1)
+root.render( 
+    //CreateBye()
+    //OR
+    <CreateBye/>
+    // Both of these main the same thing we will use the second version
+    // Most components are use slef closing tags 
+)
+
+function CreateBye()
+{
+    return(
+        <main>
+            <h1>Hello</h1>
+            <p>use PASCAL case for components, for each word first letter capital</p>
+        </main>
+    )
+}
