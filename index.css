@@ -1,26 +1,106 @@
-.nav-hor{
+/* .header-hor{
     display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-}
-.header-hor{
-    display: flex;
-    justify-content:space-between;
+    justify-content:flex-start;
     align-items: center;
-
+    background-color: #21222a;
+    padding: 10px;
+    height:200px;
+    color: aliceblue;
+    font-weight: 700;
+}
+.header-hor > span{
+    padding-left: 5px;
+    font-size: 2rem;
 }
 *{
     box-sizing: border-box;
 }
 body{
-    padding: 20px;
-    font-family: Inter, 'sans-serif';
+    font-family: Inter, sans-serif;
+    background-image:url(chi.jpg);
+    background-size: cover;
+    margin: 0px;
 
-}
-.nav-list-item{
-    margin-left:10px;
-    font-size:1.5 rem
 }
 .image-style{
     width: 50px;
+    border-radius: 50%;
+}
+
+.main {
+    padding: 20px;
+} */
+
+*{
+    box-sizing: border-box;
+}
+/* now width and height also include border + padding besides content  */
+/* Default box siging is content box , width height is only for the content */
+
+nav > img{
+    width: 50px;
+}
+
+body{    
+    margin:0px;
+    /* You need margin 0px so that navigation header looks perfect */
+    font-family: Inter, sans-serif;
+    background-color: aquamarine;
+
+}
+
+header{
+    background-color: #21222a;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+
+}
+nav > span{
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: aliceblue;
+
+}
+
+main {
+    padding: 20px 40px;
+    /* see here ebackground size ,repeat and postion properties  */
+    background-image: url('react\ logo.png');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size:30%;
+}
+
+.quote-list > li{
+    line-height: 1.5; 
+    padding-block: 10px;  
+    /* padding block is just padding top and padding bottom for english language   */
+    /* hence you observe here there is difference between line height and padding */
+}
+
+/* margin collapse padding do not collapse  */
+
+/* Pseudo-class
+Keyword preceded by a single colon (:) that selects an element when it is in a specific state
+Example :hover ,:visited , :focus 
+
+Pseudo-element 
+keyword preceded by a double colon (::) that allows you to style a specific, "virtual" part of an element or insert content that doesn't exist in the actual HTML
+Example ::first-letter (firt letter of text) , (slected portion of text) ::selection */
+
+
+.quote-list > li::marker{
+    color: #0098e4;
+    font-size: 1.5rem;
 }

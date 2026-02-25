@@ -1,13 +1,12 @@
 export default function Navbar()
 {
     return(
-        <header className='header-hor'>
-            <img src="brucelee.jpg" alt="Empty  image" className='image-style'/>
-                <ul className='nav-hor'>
-                    <li className='nav-list-item'>Kung fu</li>
-                    <li className='nav-list-item'>Karate</li>
-                    <li className='nav-list-item'>Martial Arts</li>
-                </ul>
+        <header>
+            <nav className="header-hor">
+                {/* why src bruclee.jpg just works here  */}
+                <img src="brucelee.jpg" alt="brucelee image" className="image-style" />
+                <span>Bruce lee Quotes</span>
+            </nav>
         </header>
 
     )
