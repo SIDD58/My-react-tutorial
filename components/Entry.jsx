@@ -1,6 +1,6 @@
+
 export default function Entry(props)
 {
-    console.log(props)
     return (
         <>
         <div className="card">
