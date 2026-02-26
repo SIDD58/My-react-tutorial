@@ -1,11 +1,10 @@
 export default function Header()
 {
-    return (
+    return(
         <header>
             <nav>
-                {/* <img src="globe.png" alt="" /> */}
-                <i class="fa-solid fa-globe"></i>
-                <span>My Travel Journal</span>
+                <img src="images/chef.png" alt="" />
+                <span>Hello</span>
             </nav>
         </header>
     )
