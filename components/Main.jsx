@@ -2,9 +2,12 @@ import {useState} from 'react'
 export default function App() {
     const [counter,setCounter]=useState(0)
     const decrement= ()=>{
-        setCounter(counter-1)
+        setCounter((prevcount)=>prevcount-1)
+        setCounter((prevcount)=>prevcount-1)
+
     }
     const increment= ()=>{
+        setCounter(counter+1)
         setCounter(counter+1)
     }
 
