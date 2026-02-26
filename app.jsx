@@ -7,17 +7,38 @@ export default function App()
 {
     const data_jsx=data.map(
         (data)=>{
-        return <Entry 
-        img={{
-            src:data.img.src, 
-            alt:data.img.alt}}
-        title={data.title}
-        country={data.country}
-        googleMapslink={data.googleMapsLink}
-        dates={data.dates}
-        text={data.text}
-        >
-        </Entry>    
+        return(
+
+        <Entry
+        key={data.id}
+        entry_obj={data}
+        />
+        //     <Entry 
+        // img={{
+        //     src:data.img.src, 
+        //     alt:data.img.alt}}
+        // key={data.key}
+        // title={data.title}
+        // country={data.country}
+        // googleMapslink={data.googleMapsLink}
+        // dates={data.dates}
+        // text={data.text}
+        // >
+        // </Entry> 
+        // We can also pass data.img directly 
+        // Because property name and shape of data is same what entry component property name and shape are 
+
+        // <Entry 
+        // img={data.img}
+        // title={data.title}
+        // country={data.country}
+        // googleMapslink={data.googleMapsLink}
+        // dates={data.dates}
+        // text={data.text}
+        // >
+        // </Entry> 
+
+        )    
         }
     )
 
