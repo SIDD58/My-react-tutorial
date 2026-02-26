@@ -10,6 +10,13 @@ export default function App() {
         setCounter(counter+1)
         setCounter(counter+1)
     }
+    const [goout,setGoout]=useState("yes")
+
+    const toggle=()=>{
+        setGoout((prevValue)=>{
+            return prevValue=="yes"?"no":"yes"
+        })
+    }
 
     return (
         <main className="container">
@@ -19,6 +26,9 @@ export default function App() {
                 <h2 className="count">{counter}</h2>
                 <button className="plus" aria-label="Increase count" onClick={increment}>+</button>
             </div>
+            {/* exrecise 2 */}
+            <h1 className="title">Do I feel like going out tonight?</h1>
+            <button className="value" onClick={toggle}>{goout}</button>
         </main>
     )
 }
