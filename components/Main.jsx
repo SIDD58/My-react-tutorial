@@ -11,10 +11,26 @@ export default function App() {
         setCounter(counter+1)
     }
     const [goout,setGoout]=useState(true)
-    //  Return value from callback function is important 
+    //  Return value from callback function is important
+
+
+    const [myFavoriteThings,setMyFavoriteThings] = useState([])
+    const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁", 
+    "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+    const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
+
+    function addFavoriteThing() {
+        setMyFavoriteThings((prevState)=>[...prevState,allFavoriteThings[prevState.length]])
+        // We'll work on this next, nothing to do here yet.
+    } 
 
     return (
         <main className="container">
+            <button onClick={addFavoriteThing}>Add item</button>
+            <section aria-live="polite">
+                {thingsElements}
+            </section>
+
             <h1>How many times will Bob say "state" in this section?</h1>
             <div className="counter">
                 <button className="minus" aria-label="Decrease count" onClick={decrement}>–</button>
