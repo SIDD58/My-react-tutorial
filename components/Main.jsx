@@ -11,12 +11,6 @@ export default function App() {
         setCounter(counter+1)
     }
     const [goout,setGoout]=useState(true)
-
-    const toggle=()=>{
-        setGoout((prevValue)=>{
-            return prevValue?false:true
-        })
-    }
     //  Return value from callback function is important 
 
     return (
@@ -29,7 +23,7 @@ export default function App() {
             </div>
             {/* exrecise 2 */}
             <h1 className="title">Do I feel like going out tonight?</h1>
-            <button className="value" onClick={toggle}>{goout?"Yes":"No"}</button>
+            <button className="value" onClick={()=>setGoout(!goout)}>{goout?"Yes":"No"}</button>
         </main>
     )
 }
