@@ -1,10 +1,8 @@
 import {useState} from 'react'
-export default function Pad({color,on_status})
+export default function Pad({color,on_status,pad_click,id})
 {
-    const [on_stat,setOnStat]=useState(on_status)
     return (
-        (
-            <button style={{backgroundColor:color}} className={on_stat?"on":""} onClick={()=>{setOnStat(!on_stat)}}></button>)
+            <button style={{backgroundColor:color}} className={on_status?"on":""} onClick={()=>{pad_click(id)}}></button>
         )
         
 }
