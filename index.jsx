@@ -11,21 +11,16 @@ import { createRoot } from "react-dom/client";
 
 function Signup()
 {
-    const handleSubmit=(event)=>{
-        event.preventDefault()
-        const formEl=event.currentTarget
-        const form=new FormData(formEl)
-        const email=form.get('email')
-        const password = form.get('password')
+    const handleSubmit=(formdata)=>{
+        const email=formdata.get('email')
+        const password=formdata.get('password')
         console.log(email,password)
-        formEl.reset()
-        // method reset function is on form element 
     }
 
     return(
         <>
         <h1>Sign Up</h1>
-        <form action="" method="get" onSubmit={handleSubmit}>
+        <form action={handleSubmit}>
             <label htmlFor="email">Email:</label>
             <input type="email" name="email" id="email" placeholder="Email" aria-label="Type Email"/>
             <br />
