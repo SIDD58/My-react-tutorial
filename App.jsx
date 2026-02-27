@@ -1,21 +1,18 @@
-import React from "react"
+import {useState} from "react"
 import avatar from "./images/user.jpeg"
-import starFilled from "./images/starfill.png"
-import starEmpty from "./images/starempty.png"
+import StarButton from "./components/StarButton"
+import Header from './components/Header'
+import Body from './components/Body'
 
 export default function App() {
-    const [contact, setContact] = React.useState({
+    const [contact, setContact] = useState({
         firstName: "John",
         lastName: "Doe",
         phone: "+1 (212) 555-1212",
         email: "itsmyrealname@example.com",
-        isFavorite: false
+        isFavorite: true
     })
-    /**
-     * Challenge: Fill in the values in the markup
-     * using the properties of our state object above
-     * (Ignore `isFavorite` for now)
-     */
+    const [userName,setUserName]=useState(contact.firstName+" "+contact.lastName)
 
     function toggleFavorite() {
         setContact((prevState)=>{
@@ -28,6 +25,8 @@ export default function App() {
 
     return (
         <main>
+            <Header name={userName} ></Header>
+            <Body name={userName}></Body>
             <article className="card">
                 <img
                     src={avatar}
@@ -35,7 +34,8 @@ export default function App() {
                     alt="User profile picture of John Doe"
                 />
                 <div className="info">
-                    <button
+                    <StarButton isFilled={contact.isFavorite} handleClick={toggleFavorite}></StarButton>
+                    {/* <button
                         onClick={toggleFavorite}
                         aria-pressed={false}
                         className="favorite-button"
@@ -45,7 +45,7 @@ export default function App() {
                             alt= {(contact.isFavorite?"Filled":"Empty")+" star icon"}
                             className="favorite"
                         />
-                    </button>
+                    </button> */}
                     <h2 className="name">
                         {contact.firstName} {contact.lastName}
                     </h2>
