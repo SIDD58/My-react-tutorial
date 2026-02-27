@@ -12,7 +12,27 @@ export default function App({darkMode}) {
             })
         )
     }
-    // const state_change=(id)=>{
+    const reset=()=>{
+        setPads(prevState=>prevState.map(
+            (item)=>{
+                return {...item,on:false}
+            }
+        ))
+    }
+    
+    const pad_list=pad_buttons.map((pad)=><Pad key={pad.id} color={pad.color} on_status={pad.on} id={pad.id} pad_click={state_change}/>)
+    return (
+        <main>
+            <div className="pad-container">
+                {pad_list}
+                <button className="on" onClick={reset}>Reset</button>
+            </div>
+        </main>
+    )
+}
+
+
+// const state_change=(id)=>{
     // console.log(id)
 
     //     setPads(
@@ -36,15 +56,3 @@ export default function App({darkMode}) {
     //         )
     //     }
     // )}
-    const pad_list=pad_buttons.map((pad)=><Pad key={pad.id} color={pad.color} on_status={pad.on} id={pad.id} pad_click={state_change}/>)
-    return (
-        <main>
-            <div className="pad-container">
-                {pad_list}
-            </div>
-        </main>
-    )
-}
-
-
-
