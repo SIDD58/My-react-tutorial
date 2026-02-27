@@ -12,13 +12,16 @@ import { createRoot } from "react-dom/client";
 function Signup()
 {
     const handleSubmit=(formdata)=>{
-        const email=formdata.get('email')
-        const password=formdata.get('password')
-        const description=formdata.get('description')
-        const employment=formdata.get('employment')
-        const fav_character=formdata.getAll('character')
-        const location=formdata.get('worklocation')
-        console.log(email,password,description,employment,fav_character,location)
+        const allentries=Object.fromEntries(formdata)
+        const character=formdata.getAll('character')
+        console.log({...allentries,character})
+        // const email=formdata.get('email')
+        // const password=formdata.get('password')
+        // const description=formdata.get('description')
+        // const employment=formdata.get('employment')
+        // const fav_character=formdata.getAll('character')
+        // const location=formdata.get('worklocation')
+        // console.log(email,password,description,employment,fav_character,location)
     }
 
     return(
