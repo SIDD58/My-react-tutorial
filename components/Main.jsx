@@ -1,5 +1,7 @@
 import {useState} from 'react'
+import CountHeader from './CountHeader'
 export default function App() {
+    console.log("rendered")
     const [counter,setCounter]=useState(0)
     const decrement= ()=>{
         setCounter((prevcount)=>prevcount-1)
@@ -31,10 +33,11 @@ export default function App() {
                 {thingsElements}
             </section>
 
-            <h1>How many times will Bob say "state" in this section?</h1>
+            <h1>How many times will iron man say "state" in this section?</h1>
             <div className="counter">
                 <button className="minus" aria-label="Decrease count" onClick={decrement}>–</button>
-                <h2 className="count">{counter}</h2>
+                <CountHeader number={counter}/>
+                {/* <h2 className="count">{counter}</h2> */}
                 <button className="plus" aria-label="Increase count" onClick={increment}>+</button>
             </div>
             {/* exrecise 2 */}
