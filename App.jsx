@@ -1,5 +1,6 @@
 import pads from "./pads"
 import {useState} from 'react'
+import Pad from './components/Pad'
 
 export default function App({darkMode}) {
     /**
@@ -12,10 +13,11 @@ export default function App({darkMode}) {
      *    properties yet)
      */
     const [pad_buttons,setPads]=useState(pads)
-    const color=darkMode?"#222222":"#cccccc"
-    const pad_list=pad_buttons.map((pad)=><button key={pad.id} 
-    style={{backgroundColor:color}}></button>)
+    // const color=darkMode?"#222222":"#cccccc"
+    const pad_list=pad_buttons.map((pad)=><Pad key={pad.id} color={pad.color} on_status={pad.on}/>)
 
+    // <button key={pad.id} 
+    // style={{backgroundColor:color}}></button
 
     return (
         <main>
