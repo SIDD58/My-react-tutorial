@@ -1,59 +1,27 @@
-import {useState} from "react"
-import avatar from "./images/user.jpeg"
-import StarButton from "./components/StarButton"
-import Header from './components/Header'
-import Body from './components/Body'
+import pads from "./pads"
+import {useState} from 'react'
 
-export default function App() {
-    const [contact, setContact] = useState({
-        firstName: "John",
-        lastName: "Doe",
-        phone: "+1 (212) 555-1212",
-        email: "itsmyrealname@example.com",
-        isFavorite: true
-    })
-    const [userName,setUserName]=useState(contact.firstName+" "+contact.lastName)
+export default function App({darkMode}) {
+    /**
+     * Challenge part 1:
+     * 1. Initialize state with the default value of the
+     *    array pulled in from pads.js
+     * 2. Map over that state array and display each one
+     *    as a <button> (CSS is already written for you)
+     *    (Don't worry about using the "on" or "color" 
+     *    properties yet)
+     */
+    const [pad_buttons,setPads]=useState(pads)
+    const color=darkMode?"#222222":"#cccccc"
+    const pad_list=pad_buttons.map((pad)=><button key={pad.id} 
+    style={{backgroundColor:color}}></button>)
 
-    function toggleFavorite() {
-        setContact((prevState)=>{
-            const isFavorite=!prevState.isFavorite
-            return (
-                {...prevState,isFavorite}
-            )
-        })
-    }
 
     return (
         <main>
-            <Header name={userName} ></Header>
-            <Body name={userName}></Body>
-            <article className="card">
-                <img
-                    src={avatar}
-                    className="avatar"
-                    alt="User profile picture of John Doe"
-                />
-                <div className="info">
-                    <StarButton isFilled={contact.isFavorite} handleClick={toggleFavorite}></StarButton>
-                    {/* <button
-                        onClick={toggleFavorite}
-                        aria-pressed={false}
-                        className="favorite-button"
-                    >
-                        <img
-                            src={contact.isFavorite?starFilled:starEmpty}
-                            alt= {(contact.isFavorite?"Filled":"Empty")+" star icon"}
-                            className="favorite"
-                        />
-                    </button> */}
-                    <h2 className="name">
-                        {contact.firstName} {contact.lastName}
-                    </h2>
-                    <p className="contact">{contact.phone}</p>
-                    <p className="contact">{contact.email}</p>
-                </div>
-
-            </article>
+            <div className="pad-container">
+                {pad_list}
+            </div>
         </main>
     )
 }
